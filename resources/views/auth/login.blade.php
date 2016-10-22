@@ -8,7 +8,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
+            <a href="{{ url('/home') }}"><b>Plagger</b></a>
         </div><!-- /.login-logo -->
 
     @if (count($errors) > 0)
@@ -62,8 +62,8 @@
     <script>
         $(function () {
             $('input').iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                radioClass: 'iradio_square-blue',
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
                 increaseArea: '20%' // optional
             });
         });

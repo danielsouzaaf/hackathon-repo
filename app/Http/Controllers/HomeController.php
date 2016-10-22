@@ -35,7 +35,6 @@ class HomeController extends Controller
     public function index()
     {
         $usuario = Auth::user();
-        echo $usuario->gravatar;
         return view('home', compact('usuario'));
     }
 }

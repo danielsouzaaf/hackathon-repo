@@ -9,7 +9,7 @@
     <body class="hold-transition register-page">
     <div class="register-box">
         <div class="register-logo">
-            <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
+            <a href="{{ url('/home') }}"><b>Plagerr</b></a>
         </div>
 
         @if (count($errors) > 0)
@@ -77,8 +77,8 @@
     <script>
         $(function () {
             $('input').iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                radioClass: 'iradio_square-blue',
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
                 increaseArea: '20%' // optional
             });
         });
