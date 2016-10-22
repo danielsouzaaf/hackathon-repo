@@ -20,6 +20,9 @@
             }
         });
     });
+
+    $('select').select2();
+
 </script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

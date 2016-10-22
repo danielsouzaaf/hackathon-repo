@@ -11,4 +11,9 @@ class Ordem extends Model
     {
         return $this->belongsTo('App\Insumo');
     }
+
+    public function status()
+    {
+        return $this->belongsTo('App\Status');
+    }
 }

@@ -24,8 +24,9 @@ class InsumoController extends Controller
 
     public function index()
     {
-        $insumos = Insumo::all();
+
         $usuario = Auth::user();
+        $insumos = Insumo::where('user_id', '=', $usuario->id)->get();
         return view ('insumos.index', compact("insumos", "usuario"));
     }
 
