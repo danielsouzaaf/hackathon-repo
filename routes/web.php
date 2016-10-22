@@ -20,4 +20,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/insumos', 'InsumoController@index');
+//class="btn btn-block btn-primary btn-lg"
+Route::get('/insumos/cadastro', 'InsumoController@ShowInsumoForm');
+Route::post('/insumos/cadastro', 'InsumoController@create');
+
 Route::get('logout', 'Auth\LoginController@logout');

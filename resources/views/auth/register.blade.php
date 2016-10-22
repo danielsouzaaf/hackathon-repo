@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <body class="hold-transition register-page">
+    <body style="background: url('http://2.bp.blogspot.com/_UjgVks5Z4Rw/S9xOExx4ZcI/AAAAAAAAArQ/pM0J806Ezu0/s1600/toppo.jpg');" class="hold-transition register-page">
     <div class="register-box">
         <div class="register-logo">
             <a href="{{ url('/home') }}"><b>Plagerr</b></a>
