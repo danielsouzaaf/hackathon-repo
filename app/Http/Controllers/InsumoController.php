@@ -39,9 +39,10 @@ class InsumoController extends Controller
         {
             $ins->eh_organico = TRUE ? $request->organico == 'sim' : FALSE;
         }
+        $ins->user_id = Auth::user()->id;
 
         $ins->save();
-        $usuario = Auth::user();
+
 
         return redirect('/insumos');
 //        "_token" => "0kYuUraOnhiRJz8N6x7XOUEm3oqceDY91azGw4zP"
