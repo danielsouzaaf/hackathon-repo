@@ -17,6 +17,7 @@ class StatusSeeder extends Seeder
             ['descricao' => 'Mandar ao aterro'],
             ['descricao' => 'Mandar para reciclagem'],
             ['descricao' => 'Concluido'],
+            ['descricao' => 'Sem status']
         ]);
     }
 }

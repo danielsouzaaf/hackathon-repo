@@ -32,10 +32,11 @@
 							</tr>
 							@foreach ($ordens as $ord)
 								<tr>
+
 									<td>{{$ord->insumo->descricao}}</td>
 									<td>{{$ord->quantidade}}</td>
 									<td>{{$ord->status->descricao}}</td>
-									<td><a class="btn btn-block btn-info" href="{{ url('ordens/') }}{{$ord->id}}">Visualizar ordem</a> </td>
+									<td><a class="btn btn-block btn-info" href="{{ url('ordens/') }}/{{$ord->id}}">Visualizar ordem</a> </td>
 								</tr>
 							@endforeach
 

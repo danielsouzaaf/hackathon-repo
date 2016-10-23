@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('contentheader_title')
-	Cadastro de ordens de pedido
+	Ordem de pedido de {{$order->insumo->descricao}}
 @endsection
 
 @section('htmlheader_title')
@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<div class="panel panel-default">
-					<div class="panel-heading">Cadastro de ordens de pedido</div>
+					<div class="panel-heading">Ordem de pedido de {{$order->insumo->descricao}}</div>
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
 							<strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
@@ -26,18 +26,18 @@
 						</div>
 					@endif
 					<div class="panel-body">
-						<form method="post" action="{{ url('/ordens/cadastro') }}">
+						<form method="post" action="{{ url('/ordens/') }}/{{ $order->id }}">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="form-group has-feedback">
-								<select id="insumos" name="insumos">
+								<select name="status">
 									<option value="" selected>Selecione uma opção</option>
-									@foreach ($insumos as $ins)
-										<option value="{{$ins->id}}">{{$ins->descricao}}</option>
+									@foreach ($statuses as $stat)
+										<option value="{{$stat->id}}" @if ($stat->id == $order->status->id) selected @endif>{{$stat->descricao}}</option>
 									@endforeach
 								</select>
 							</div>
 							<div class="form-group has-feedback">
-								<input type="text" class="form-control" placeholder="Digite a quantidade" name="quantidade"/>
+								<input type="text" class="form-control" value="{{$order->quantidade}}" name="quantidade"/>
 								<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
 							</div>
 

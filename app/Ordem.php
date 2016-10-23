@@ -14,6 +14,6 @@ class Ordem extends Model
 
     public function status()
     {
-        return $this->belongsTo('App\Status');
+        return $this->belongsTo('App\Status', 'statuses_id');
     }
 }
