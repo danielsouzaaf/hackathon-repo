@@ -37,10 +37,10 @@
             <li><a href="/insumos"><i class='fa fa-link'></i> <span>Insumos</span></a></li>
             <li><a href="/ordens"><i class='fa fa-link'></i> <span>Ordens</span></a></li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Negociações</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
-                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
+                    <li><a href="/minhasnegociacoes">Minhas negociações</a></li>
+                    <li><a href="/negociacoes">Todas as negociações</a></li>
                 </ul>
             </li>
         </ul><!-- /.sidebar-menu -->

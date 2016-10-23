@@ -31,8 +31,8 @@ Route::post('/ordens/cadastro', 'OrdemController@create');
 Route::get('/ordens/{idorder}', 'OrdemController@getOrder');
 Route::post('/ordens/{idorder}', 'OrdemController@updateOrder');
 
-route::get('/negociacoes', 'NegociacaoController@myorders');
-
+route::get('/minhasnegociacoes', 'NegociacaoController@myorders');
+route::get('negociacoes', 'NegociacaoController@index');
 
 
 Route::get('logout', 'Auth\LoginController@logout');
