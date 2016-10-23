@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInsumosTable extends Migration
+class AddColumnsToOrdemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateInsumosTable extends Migration
      */
     public function up()
     {
-        Schema::create('insumos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('descricao');
-            $table->binary('eh_processo_produtivo');
-            $table->binary('eh_organico')->nullable();
-            $table->timestamps();
+        Schema::table('ordems', function (Blueprint $table) {
+            $table->string('preco')->nullable();
+            $table->date('data_limite')->nullable();
+
+
+
         });
     }
 
@@ -29,6 +29,8 @@ class CreateInsumosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('insumos');
+        Schema::table('ordems', function ($table) {
+            $table->dropColumn(['preco', 'data_limite']);
+        });
     }
 }

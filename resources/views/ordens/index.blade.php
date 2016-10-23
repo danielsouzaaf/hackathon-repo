@@ -37,7 +37,7 @@
 
 									<td>{{$ord->insumo->descricao}}</td>
 									<td>{{$ord->quantidade}}</td>
-									<td>{{$ord->status->descricao}}</td>
+									<td><span class="label @if ($ord->status->id == 5) label-success @else  label-warning @endif "> {{$ord->status->descricao}}</span></td>
 									<td>@if ($ord->data_limite != null){{$ord->data_limite}} @else <span class="label label-danger">Não</span> @endif</td>
 									<td>@if ($ord->preco != null){{$ord->preco}} @else <span class="label label-danger">Não</span> @endif</td>
 									<td><a class="btn btn-block btn-info" href="{{ url('ordens/') }}/{{$ord->id}}">Visualizar ordem</a> </td>

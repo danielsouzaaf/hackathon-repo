@@ -71,8 +71,8 @@ class OrdemController extends Controller
         $idsff = [1, 5, 6];
         $idstf = [2, 4, 6];
         $idstt = [2, 3, 6];
-        if ($order->insumo->eh_processo_produtivo && $order->insumo->eh_organico) $ids = [2, 3, 6];
-        else if($order->insumo->eh_processo_produtivo && !$order->insumo->eh_organico) $ids = [2, 4, 6];
+        if ($order->insumo->eh_processo_produtivo && $order->insumo->eh_organico) $ids = [2, 3, 5, 6];
+        else if($order->insumo->eh_processo_produtivo && !$order->insumo->eh_organico) $ids = [2, 4, 5, 6];
         else $ids = [1, 5, 6];
 
         $statuses = Status::whereIn('id', $ids)->get();
