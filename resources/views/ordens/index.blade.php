@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('contentheader_title')
-	Listagem dos insumos
+	Listagem das ordens de pedido
 @endsection
 
 @section('htmlheader_title')
@@ -28,6 +28,8 @@
 								<th>Descrição do insumo</th>
 								<th>Quantidade</th>
 								<th>Situação</th>
+								<th>Data limite para negociação</th>
+								<th>Preço</th>
 								<th>Ações</th>
 							</tr>
 							@foreach ($ordens as $ord)
@@ -36,6 +38,8 @@
 									<td>{{$ord->insumo->descricao}}</td>
 									<td>{{$ord->quantidade}}</td>
 									<td>{{$ord->status->descricao}}</td>
+									<td>@if ($ord->data_limite != null){{$ord->data_limite}} @else <span class="label label-danger">Não</span> @endif</td>
+									<td>@if ($ord->preco != null){{$ord->preco}} @else <span class="label label-danger">Não</span> @endif</td>
 									<td><a class="btn btn-block btn-info" href="{{ url('ordens/') }}/{{$ord->id}}">Visualizar ordem</a> </td>
 								</tr>
 							@endforeach

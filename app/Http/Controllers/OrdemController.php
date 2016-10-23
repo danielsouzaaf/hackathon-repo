@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Status;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 use App\Ordem;
@@ -37,9 +38,21 @@ class OrdemController extends Controller
 
     public function updateOrder(Request $request, $idorder)
     {
+
         $order = Ordem::findOrFail($idorder);
         $order->quantidade = $request->quantidade;
         $order->statuses_id = $request->status;
+
+        if ($request->status == 2){
+            if ($request ->datalimite != "" && $request->preco != "")
+            {
+                $carb = Carbon::now()->addDays($request->datalimite);
+                $order->data_limite = $carb->toDateString();
+                dd($carb->toDateString());
+
+                $order->preco = $request->preco;
+            }
+        }
         $order->save();
 
         return redirect('ordens');

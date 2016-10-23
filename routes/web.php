@@ -26,10 +26,11 @@ Route::get('/insumos/cadastro', 'InsumoController@ShowInsumoForm');
 Route::post('/insumos/cadastro', 'InsumoController@create');
 
 Route::get('/ordens', 'OrdemController@index');
+Route::get('/ordens/cadastro', 'OrdemController@ShowOrdemForm');
+Route::post('/ordens/cadastro', 'OrdemController@create');
 Route::get('/ordens/{idorder}', 'OrdemController@getOrder');
 Route::post('/ordens/{idorder}', 'OrdemController@updateOrder');
-Route::get("/ordens/cadastro", 'OrdemController@ShowOrdemForm');
-Route::post("/ordens/cadastro", 'OrdemController@create');
+
 
 
 Route::get('logout', 'Auth\LoginController@logout');

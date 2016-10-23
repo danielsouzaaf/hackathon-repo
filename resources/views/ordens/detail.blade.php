@@ -29,12 +29,22 @@
 						<form method="post" action="{{ url('/ordens/') }}/{{ $order->id }}">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="form-group has-feedback">
-								<select name="status">
+								<select name="status" id="statusselect">
 									<option value="" selected>Selecione uma opção</option>
 									@foreach ($statuses as $stat)
 										<option value="{{$stat->id}}" @if ($stat->id == $order->status->id) selected @endif>{{$stat->descricao}}</option>
 									@endforeach
 								</select>
+							</div>
+							<div class="collapse">
+								<div class="form-group has-feedback">
+									<input type="text" name="preco" placeholder="Digite o preço" />
+									<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+								</div>
+								<div class="form-group has-feedback">
+									<input type="text" name="datalimite" placeholder="Digite a quantidade máxima, em dias, da submissáo de propostas" />
+									<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+								</div>
 							</div>
 							<div class="form-group has-feedback">
 								<input type="text" class="form-control" value="{{$order->quantidade}}" name="quantidade"/>
@@ -50,4 +60,15 @@
 			</div>
 		</div>
 	</div>
+@endsection
+
+@section ('my_scripts')
+	<script type="text/javascript">
+		$('#statusselect').change(function() {
+			opt = $(this).val();
+			if (opt == 2) $('.collapse').collapse('show');
+			else $('.collapse').collapse('hide');
+		});
+	</script>
+
 @endsection
